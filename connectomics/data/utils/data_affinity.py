@@ -50,7 +50,7 @@ def mknhood3d_aniso(radiusxy=1,radiusxy_zminus1=1.8):
 
     return np.ascontiguousarray(nhood)
 
-def seg_to_aff(seg, nhood=mknhood3d(1), pad='replicate'):
+def seg_to_aff(seg, nhood=mknhood3d(1), pad='rep'):
     # constructs an affinity graph from a segmentation
     # assume affinity graph is represented as:
     # shape = (e, z, y, x)
@@ -91,11 +91,11 @@ def seg_to_aff(seg, nhood=mknhood3d(1), pad='replicate'):
                             * ( seg[max(0,nhood[e,0]):min(shape[0],shape[0]+nhood[e,0]), \
                                 max(0,nhood[e,1]):min(shape[1],shape[1]+nhood[e,1])] > 0 )
 
-    if nEdge==3 and pad == 'replicate': # pad the boundary affinity
+    if nEdge==3 and pad == 'rep': # pad the boundary affinity
         aff[0,0] = (seg[0]>0).astype(aff.dtype)
         aff[1,:,0] = (seg[:,0]>0).astype(aff.dtype)
         aff[2,:,:,0] = (seg[:,:,0]>0).astype(aff.dtype)
-    elif nEdge==2 and pad == 'replicate': # pad the boundary affinity
+    elif nEdge==2 and pad == 'rep': # pad the boundary affinity
         aff[0,0] = (seg[0]>0).astype(aff.dtype)
         aff[1,:,0] = (seg[:,0]>0).astype(aff.dtype)
 
