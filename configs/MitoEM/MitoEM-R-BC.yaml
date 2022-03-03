@@ -21,9 +21,11 @@ MODEL:
 DATASET:
   IMAGE_NAME: 'configs/MitoEM/im_train_rat.json'
   LABEL_NAME: 'configs/MitoEM/mito_train_rat.json'
-  INPUT_PATH: '/braindat/lab/limx/MitoEM2021/CODE/HUMAN/rsunet_retrain_297000_v2/' # work container
+  INPUT_PATH: './'
+  # '/braindat/lab/limx/MitoEM2021/CODE/HUMAN/rsunet_retrain_297000_v2/' # work container
   # inference: save model
-  INFERENCE_PATH: '/braindat/lab/limx/MitoEM2021/CODE/HUMAN/rsunet_retrain_297000_v2/'
+  INFERENCE_PATH: './'
+  # '/braindat/lab/limx/MitoEM2021/CODE/HUMAN/rsunet_retrain_297000_v2/'
   OUTPUT_PATH: 'outputs/dataset_output'
   PAD_SIZE: [0, 0, 0] # [16, 128, 128]  # Mirror padding of big chunk
   DO_CHUNK_TITLE: 1 # json file reading

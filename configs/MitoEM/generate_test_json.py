@@ -6,10 +6,10 @@
 
 import json
 
-in_dir = "/braindat/lab/limx/MitoEM2021/CODE/Author/baseline/pytorch_connectomics-master/configs/MitoEM/im_train_rat.json"
-out_dir = "/braindat/lab/limx/MitoEM2021/CODE/Author/baseline/pytorch_connectomics-master/configs/MitoEM/im_test_rat.json"
+in_dir = "./configs/MitoEM/im_train_rat.json"
+out_dir = "./configs/MitoEM/im_test_rat.json"
 
-path = "/braindat/lab/limx/MitoEM2021/MitoEM-R/MitoEM-R/im/im{:04d}.png"
+path = "./im/im{:04d}.png"
 
 with open(in_dir, 'r') as f:
     data = json.load(f)
