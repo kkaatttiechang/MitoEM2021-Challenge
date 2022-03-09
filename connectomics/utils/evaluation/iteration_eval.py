@@ -59,7 +59,7 @@ def cal_infer(root_dir, model_id):
 
     command = "/opt/conda/bin/python {}connectomics/utils/evaluation/evaluate.py \
                  -gt \
-                 /braindat/lab/limx/MitoEM2021/MitoEM-H/MitoEM-H/human_val_gt.h5 \
+                 {}/human_val_gt.h5 \
                  -p \
                  {}outputs/inference_output/{:06d}_out_100_256_256_aug_0_pad_0.h5 \
              -o {}{:06d}".format(root_dir, root_dir, model_id, root_dir, model_id)
@@ -80,7 +80,8 @@ if __name__=="__main__":
     step_epoch = 2500
     model_id = range(start_epoch, end_epoch+step_epoch, step_epoch)
 
-    root_dir = "/braindat/lab/limx/MitoEM2021/CODE/HUMAN/rsunet_retrain_297000_v2/"
+    root_dir = "." # WRITE PATH TO FOLDER
+    #"/braindat/lab/limx/MitoEM2021/CODE/HUMAN/rsunet_retrain_297000_v2/"
 
 
     # validation stage: output h5
